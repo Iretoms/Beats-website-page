@@ -153,14 +153,30 @@ ul {
 }
 
 
-.first-container__image img {
+.first-container__image {
+    position: relative;
     width: 23rem;
     height: 23rem;
 }
- 
-.first-container__image:hover img {
+
+.first-container__image:hover {
     animation: flip-headset 1.5s ease-out forwards;
 }
+
+.first-container__image .headset {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.first-container__image .headset.show {
+    opacity: 1;
+}
+
 
 .first-container__images {
     display: flex;
@@ -168,7 +184,8 @@ ul {
     justify-content: center;
 }
 
-.first-container__images img {
+.first-container__images .small-headset {
+    cursor: pointer;
     width: 3rem;
     height: 3rem;
     margin-bottom: 1rem;
@@ -177,7 +194,7 @@ ul {
 
 .first-container__images img:hover {
     transform: scale(1.5);
-}
+} 
 
 @keyframes flip-headset {
     0% {
